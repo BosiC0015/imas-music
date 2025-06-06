@@ -1,0 +1,26 @@
+<nav>
+    <a class="brand-icon" id="all-brands" href="{{ url_for('index') }}">
+        <img src="https://idolmaster-official.jp/assets/svg/m-brand.svg" alt="all" />
+    </a>
+    <a class="brand-icon" id="765as" href="{{ url_for('imas') }}">
+        <img src="{{ url_for('static', filename='images/765as.svg') }}" alt="765as icon"/>
+    </a>
+    <a class="brand-icon" id="cg" href="{{ url_for('cg') }}">
+        <img src="{{ url_for('static', filename='images/cg.svg') }}" alt="cg icon"/>
+    </a>
+    <a class="brand-icon" id="ml" href="{{ url_for('ml') }}">
+        <img src="{{ url_for('static', filename='images/ml.svg') }}" alt="ml icon"/>
+    </a>
+    <a class="brand-icon" id="m" href="{{ url_for('m') }}">
+        <img src="{{ url_for('static', filename='images/m.svg') }}" alt="m icon"/>
+    </a>
+    <a class="brand-icon" id="sc" href="{{ url_for('sc') }}">
+        <img src="{{ url_for('static', filename='images/sc.svg') }}" alt="sc icon"/>
+    </a>
+    <a class="brand-icon" id="gkms" href="{{ url_for('gkms') }}">
+        <img src="{{ url_for('static', filename='images/gkms.svg') }}" alt="gkms icon"/>
+    </a>
+    <a class="brand-icon" id="others">
+        <img src="{{ url_for('static', filename='images/others.svg') }}" alt="others icon"/>
+    </a>
+</nav>

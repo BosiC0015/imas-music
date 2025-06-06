@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>im@s music library</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    {% include 'nav.html' %}
+  </header>
+  <main>
+    <h1>Welcome to the imas music library</h1>
+    <div class="latest">
+      <h2>Latest Releases</h2>
+      <div class="release" id="latest-releases">
+        {% if data %}
+          {% if data is string %}
+            <p>{{ data }}</p>
+            {% else %} 
+              <script>
+                const appData = {{ data|tojson }};
+              </script>
+          {% endif %}
+        {% else %}
+          <p>No data fetched.</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="select-brand">
+      <h2>find by brand</h2>
+    </div>
+  </main>
+  <footer>
+    {% include 'footer.html' %}
+  </footer>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
