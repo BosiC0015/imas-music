@@ -51,6 +51,8 @@ def index():
       join series_test on single_album.series_id = series_test.id
     order by
       release_date desc
+    limit
+      5
   """)
   data = cursor.fetchall()
   cursor.close()
