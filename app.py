@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, g
-from supabase import create_client, Client
+# from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
 import psycopg2
@@ -48,7 +48,7 @@ def index():
       *
     from
       single_album
-      join series_test on single_album.series_id = series_test.id
+      join series on single_album.series_id = series.id
     order by
       release_date desc
     limit
@@ -60,27 +60,129 @@ def index():
 
 @app.route('/765as')
 def imas():
-   return render_template('imas.html')
+  conn = get_db()
+  cursor = conn.cursor()
+  cursor.execute(f"""
+    select
+      *
+    from
+      single_album
+      join series on series_id = series.id
+    where
+      brand = 'as'
+    order by
+      release_date desc
+    limit
+      5
+  """)
+  data = cursor.fetchall()
+  cursor.close() 
+  return render_template('imas.html', data=data)
 
 @app.route('/cg')
 def cg():
-  return render_template('cg.html')
+  conn = get_db()
+  cursor = conn.cursor()
+  cursor.execute(f"""
+    select
+      *
+    from
+      single_album
+      join series on series_id = series.id
+    where
+      brand = 'cg'
+    order by
+      release_date desc
+    limit
+      5
+  """)
+  data = cursor.fetchall()
+  cursor.close()
+  return render_template('cg.html', data=data)
 
 @app.route('/ml')
 def ml():
-  return render_template('ml.html')
+  conn = get_db()
+  cursor = conn.cursor()
+  cursor.execute(f"""
+    select
+      *
+    from
+      single_album
+      join series on series_id = series.id
+    where
+      brand = 'ml'
+    order by
+      release_date desc
+    limit
+      5
+  """)
+  data = cursor.fetchall()
+  cursor.close()
+  return render_template('ml.html', data=data)
 
 @app.route('/m')
 def m():
-  return render_template('m.html')
+  conn = get_db()
+  cursor = conn.cursor()
+  cursor.execute(f"""
+    select
+      *
+    from
+      single_album
+      join series on series_id = series.id
+    where
+      brand = 'm'
+    order by
+      release_date desc
+    limit
+      5
+  """)
+  data = cursor.fetchall()
+  cursor.close()
+  return render_template('m.html', data=data)
 
 @app.route('/sc')
 def sc():
-  return render_template('sc.html')
+  conn = get_db()
+  cursor = conn.cursor()
+  cursor.execute(f"""
+    select
+      *
+    from
+      single_album
+      join series on series_id = series.id
+    where
+      brand = 'sc'
+    order by
+      release_date desc
+    limit
+      5
+  """)
+  data = cursor.fetchall()
+  cursor.close()
+  return render_template('sc.html', data=data)
 
 @app.route('/gkms')
 def gkms():
-  return render_template('gkms.html')
+  conn = get_db()
+  cursor = conn.cursor()
+  cursor.execute(f"""
+    select
+      *
+    from
+      single_album
+      join series on series_id = series.id
+    where
+      brand = 'gkms'
+    order by
+      release_date desc
+    limit
+      5
+  """)
+  data = cursor.fetchall()
+  cursor.close()
+  return render_template('gkms.html', data=data)
 
 if __name__ == '__main__':
   app.run(debug=True)

@@ -13,6 +13,22 @@
   <main>
     <h1>Welcome to the imas music library</h1>
     <h2>Gakuen IDOLM@STER</h2>
+    <div class="latest">
+      <h2>Latest Releases</h2>
+      <div class="release" id="latest-releases">
+        {% if data %}
+          {% if data is string %}
+            <p>{{ data }}</p>
+            {% else %} 
+              <script>
+                const appData = {{ data|tojson }};
+              </script>
+          {% endif %}
+        {% else %}
+          <p>No data fetched.</p>
+        {% endif %}
+      </div>
+    </div>
     <h5>find by series</h5>
   </main>
   <footer>

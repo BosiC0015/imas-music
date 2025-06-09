@@ -109,5 +109,5 @@ const createReleaseCard = (brand, title) => {
   card.append(title);
 }
 
-console.log(appData) // for debugging
+// console.log(appData) // for debugging
 appData.forEach(e => container.append(createArticle(e))); 
