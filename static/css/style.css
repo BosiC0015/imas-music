@@ -103,11 +103,12 @@ main {
 }
 
 article {
+  position: relative;
   border: 1px solid grey;
   padding: 10px;
   margin-bottom: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* justify-content: space-between; */
 }
 
@@ -126,7 +127,11 @@ article {
 }
 
 .article-brand {
-  margin-left: auto;
+  /* margin-left: auto; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
 }
 
 img {
@@ -135,4 +140,96 @@ img {
 
 svg {
   height: inherit;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  /* header and footer */
+  nav {
+    margin: 2% 5%;
+    /* margin: 2% 0; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    width: 90vw;
+  }
+
+  footer {
+    padding: 0 5%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sns {
+    color: black;
+    width: 35%;
+    padding: 10px 0;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+
+  .sns a {
+    margin-right: 50px;
+  }
+
+  .sns svg {
+    color: black;
+  }
+
+  /* main part */
+  main {
+    top: 5%;
+    margin: 2% 5%;
+  }
+
+  .latest {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+  }
+
+  .brand-icon {
+    /* height: 10vh; */
+    height: 50px;
+  }
+
+  article {
+    border: 1px solid grey;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+  }
+
+  .article-img {
+    /* border: 1px solid grey; */
+    /* border-radius: 10px; */
+    padding: 5px;
+  }
+
+  .article-info h3 {
+    margin-top: 5px;
+  }
+
+  .article-info ol {
+    font-family: 'Kanit';
+  }
+
+  .article-brand {
+    margin-left: auto;
+  }
+
+  img {
+    height: inherit;
+  }
+
+  svg {
+    height: inherit;
+  }
 }
