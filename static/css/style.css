@@ -73,8 +73,12 @@ footer {
   width: 35%;
   padding: 10px 0;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+}
+
+.sns a {
+  margin-right: 50px;
 }
 
 .sns svg {
