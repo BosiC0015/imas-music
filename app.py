@@ -18,6 +18,14 @@ HOST = os.getenv("host")
 PORT = os.getenv("port")
 DBNAME = os.getenv("dbname")
 
+# --- CONNECTION DEBUGGING ---
+print(f"DEBUG: DB_USER={USER}")
+print(f"DEBUG: DB_PASSWORD={'*' * len(PASSWORD) if PASSWORD else 'None'}") # Mask password
+print(f"DEBUG: DB_HOST={HOST}")
+print(f"DEBUG: DB_PORT={PORT}")
+print(f"DEBUG: DB_DBNAME={DBNAME}")
+
+
 
 def get_db():
   # Opens a new database connection if there is none yet for the current application context.
