@@ -6,6 +6,7 @@ body {
   font-family: 'League Spartan';
 }
 
+/* color code */
 .as {
   color: rgb(243, 78, 108);
 }
@@ -51,17 +52,52 @@ body {
 
 /* header and footer */
 nav {
-  margin: 2% 5%;
-  /* margin: 2% 0; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-collapsed {
+  padding: 20px;
+  background-color: transparent;
+}
+
+.nav-expanded {
+  padding: 20px;
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  background-color: #fffffff0;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-button {
+  margin: 25px 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  position: sticky;
-  width: 90vw;
+  align-items: center;
+}
+
+a.brand-button {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-list {
+  text-align: center;
+}
+
+.link-text {
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 1.35rem;
 }
 
 footer {
-  padding: 0 5%;
+  padding: 0 25px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -73,7 +109,6 @@ footer {
   width: 35%;
   padding: 10px 0;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -87,8 +122,9 @@ footer {
 
 /* main part */
 main {
-  top: 5%;
-  margin: 2% 5%;
+  /* margin: 2% 5%; */
+  margin: 25px;
+  padding-top: 80px;
 }
 
 .latest {
@@ -98,8 +134,7 @@ main {
 }
 
 .brand-icon {
-  /* height: 10vh; */
-  height: 50px;
+  height: 32px;
 }
 
 article {
@@ -147,17 +182,35 @@ svg {
 @media only screen and (min-width: 768px) {
   /* header and footer */
   nav {
-    margin: 2% 5%;
-    /* margin: 2% 0; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: sticky;
-    width: 90vw;
+    flex-direction: column;
+  }
+  
+  .nav-collapsed {
+    padding: 40px;
+    background-color: transparent;
+  }
+  
+  .nav-expanded {
+    padding: 40px;
+    height: calc(100vh - 80px);
+    width: calc(100vw - 80px);
+    background-color: #fffffff0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav svg {
+    height: 50;
+    width: 50;
   }
 
   footer {
-    padding: 0 5%;
+    padding: 40px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -183,8 +236,7 @@ svg {
 
   /* main part */
   main {
-    top: 5%;
-    margin: 2% 5%;
+    margin: 40px;
   }
 
   .latest {
@@ -194,7 +246,6 @@ svg {
   }
 
   .brand-icon {
-    /* height: 10vh; */
     height: 50px;
   }
 
@@ -232,4 +283,9 @@ svg {
   svg {
     height: inherit;
   }
+}
+
+
+.hide {
+  display: none;
 }

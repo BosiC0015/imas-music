@@ -24,8 +24,42 @@ const getBrandIconSrc = (brand) => {
   return brandIconsSrc[brand];
 };
 
-//container
-const container = document.getElementById('latest-releases');
+
+// nav expand and collapse
+const navExpandButton = document.getElementById('nav-expand-button');
+const navCollapseButton = document.getElementById('nav-collapse-button')
+const navCollapsed = document.getElementById('nav-collapsed');
+const navExpanded = document.getElementById('nav-expanded');
+
+const navExpand = () => {
+  navExpanded.classList.remove('hide');
+  navCollapsed.classList.add('hide');
+  navCollapseButton.classList.remove('hide');
+  navExpandButton.classList.add('hide');
+};
+
+const navCollapse = () => {
+  navExpanded.classList.add('hide');
+  navCollapsed.classList.remove('hide');
+  navCollapseButton.classList.add('hide');
+  navExpandButton.classList.remove('hide');
+};
+
+navExpandButton.addEventListener('click', function() {
+  navExpand();
+});
+
+navCollapseButton.addEventListener('click', function() {
+  navCollapse();
+});
+
+
+// search bar
+
+
+
+//container for latest 5 releases
+const latestReleaseContainer = document.getElementById('latest-releases');
 
 const createCover = (cover, title) => {
   const articleImg = document.createElement('div');
@@ -110,4 +144,4 @@ const createReleaseCard = (brand, title) => {
 }
 
 // console.log(appData) // for debugging
-appData.forEach(e => container.append(createArticle(e))); 
+appData.forEach(e => latestReleaseContainer.append(createArticle(e))); 
