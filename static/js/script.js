@@ -104,12 +104,27 @@ const createBrandIcon = (brand) => {
   const articleBrand = document.createElement('div');
   articleBrand.classList.add('article-brand');
   
-  const icon = document.createElement('img');
-  icon.src = getBrandIconSrc(brand);
-  icon.alt = `${brandName[brand]} icon`;
-  icon.style = "width: 50px;";
-  
-  articleBrand.append(icon);
+  if (brand == "ml_as") {
+    const icon_m = document.createElement('img');
+    icon_m.src = getBrandIconSrc('ml');
+    icon_m.alt = `${brandName['ml']} icon`;
+    icon_m.style = "width: 50px;";
+
+    const icon_a = document.createElement('img');
+    icon_a.src = getBrandIconSrc('as');
+    icon_a.alt = `${brandName['as']} icon`;
+    icon_a.style = "width: 50px;";
+
+    articleBrand.append(icon_m);
+    articleBrand.append(icon_a);
+  } else {
+    const icon = document.createElement('img');
+    icon.src = getBrandIconSrc(brand);
+    icon.alt = `${brandName[brand]} icon`;
+    icon.style = "width: 50px;";
+    
+    articleBrand.append(icon);
+  }
   return articleBrand
 }
 

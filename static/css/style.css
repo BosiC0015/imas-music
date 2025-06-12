@@ -25,6 +25,9 @@ body {
 .ml-shadow {
   box-shadow: 6px 6px 1px .5px rgba(255, 194, 11, 0.3);
 }
+.ml_as-shadow {
+  box-shadow: 6px 0px 1px .5px rgba(255, 194, 11, 0.3), 0px 6px 1px .5px rgba(243, 78, 108, 0.3);
+}
 .m {
   color: rgb(17, 190, 147);
 }
@@ -167,6 +170,8 @@ article {
   top: 0;
   right: 0;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
