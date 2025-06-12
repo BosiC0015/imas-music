@@ -20,15 +20,8 @@ load_dotenv()
 USER = os.getenv("USER")
 PASSWORD = os.getenv("PASSWORD")
 HOST = os.getenv("HOST")
-PORT = os.getenv("PORT")
+PORT = os.getenv("DB_PORT")
 DBNAME = os.getenv("DBNAME")
-
-# --- CONNECTION DEBUGGING ---
-print(f"DEBUG: DB_USER={USER}")
-print(f"DEBUG: DB_PASSWORD={'*' * len(PASSWORD) if PASSWORD else 'None'}") # Mask password
-print(f"DEBUG: DB_HOST={HOST}")
-print(f"DEBUG: DB_PORT={PORT}")
-print(f"DEBUG: DB_DBNAME={DBNAME}")
 
 
 
